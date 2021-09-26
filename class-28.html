@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Calculator <3</title>
+    <style>
+        body{
+            background-image: url("https://wallpaperaccess.com/full/3926339.jpg");
+            background-size: cover;
+            margin-left: 28%;
+            margin-top: 7%;
+        }
+        #a,#b,#c{
+            height: 90px;
+            width: 140px;
+            font-family: calibri;
+            font-weight: bold;
+            border: 1.5px solid black;
+            border-radius: 8px;
+            transition: 0.5s;
+        }
+        #a:hover,#b:hover,#c:hover{
+            border: 1.5px solid gold;
+            box-shadow: 0px 0px 10px white;
+        }
+        #a{
+            font-size: 35px;
+            background-color: rgb(179, 179, 179);
+            color: black;
+        }
+        #b{
+            font-size: 40px;
+            background-color: grey;
+            color: black;
+        }
+        #c{
+            font-size: 40px;
+            background-color: grey;
+            color: black;
+        }
+        #inp{
+            height: 65px;
+            width: 565px;
+            background-color: white;
+            color: black;
+            font-size: 40px;
+            font-family: cursive;
+            text-align: right;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+    </style>
+</head>
+ 
+<body>
+    <input type="text" id="inp" placeholder="0">
+    <table>
+        <!-- Row-1 -->
+        <tr>
+            <td> <input type="button" value="7" id="a" onclick="getInput('7')"> </td>
+            <td> <input type="button" value="8" id="a" onclick="getInput('8')"> </td>
+            <td> <input type="button" value="9" id="a" onclick="getInput('9')"> </td>
+            <td> <input type="button" value="+" id="b" onclick="getInput('+')"> </td>
+        </tr>
+ 
+        <!-- Row-2 -->
+        <tr>
+            <td> <input type="button" value="4" id="a" onclick="getInput('4')"> </td>
+            <td> <input type="button" value="5" id="a" onclick="getInput('5')"> </td>
+            <td> <input type="button" value="6" id="a" onclick="getInput('6')"> </td>
+            <td> <input type="button" value="-" id="b" onclick="getInput('-')"> </td>
+        </tr>
+ 
+        <!-- Row-3 -->
+        <tr>
+            <td> <input type="button" value="1" id="a" onclick="getInput('1')"> </td>
+            <td> <input type="button" value="2" id="a" onclick="getInput('2')"> </td>
+            <td> <input type="button" value="3" id="a" onclick="getInput('3')"> </td>
+            <td> <input type="button" value="x" id="b" onclick="getInput('*')"> </td>
+        </tr>
+ 
+        <!-- Row-4 -->
+        <tr>
+            <td> <input type="button" value="C" id="c" onclick="clearInput()"> </td>
+            <td> <input type="button" value="0" id="a" onclick="getInput('0')"> </td>
+            <td> <input type="button" value="=" id="c" onclick="showAnswer()"> </td>
+            <td> <input type="button" value="÷" id="b" onclick="getInput('/')"> </td>
+        </tr>
+    </table>
+
+    <script>
+        function getInput(num){
+            document.getElementById("inp").value = document.getElementById("inp").value + num
+            }
+            function clearInput(){
+                document.getElementById("inp").value = ""
+            }
+            function showAnswer(){
+            var exp = document.getElementById("inp").value
+            var answer = eval(exp)
+            document.getElementById("inp").value = answer
+        }
+    </script>
+</body>
+ 
+</html>
